@@ -57,25 +57,19 @@
 	                }
 	            })
 	            .then(response => {
-	            	this.successmessage();
+	            	this.$message({
+			  message: 'Ваш отзыв отправлен',
+			  type: 'success'
+			});
 	            })
 		    } else {
-		    	this.errormessage()
+		    	this.$message.error('Количество символов не соответсвует норме!');
 		    }
         	
         },
         handleFileUpload(){
         	this.file = this.$refs.file.files[0];
-     	},
-      	successmessage() {
-        this.$message({
-          message: 'Ваш отзыв отправлен',
-          type: 'success'
-        });
-      	},
-      	errormessage() {
-        this.$message.error('Количество символов не соответсвует норме!');
-      	}
+     	}
       }
     });
 </script>
