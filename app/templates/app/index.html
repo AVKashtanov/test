@@ -62,6 +62,9 @@
 			  type: 'success'
 			});
 	            })
+	            .catch(response => {
+	            	this.$message.error('Неверный формат изображения!');
+	            })
 		    } else {
 		    	this.$message.error('Количество символов не соответсвует норме!');
 		    }
